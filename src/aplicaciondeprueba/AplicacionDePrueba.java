@@ -5,6 +5,8 @@
  */
 package aplicaciondeprueba;
 
+import servicio.Usuarios;
+
 /**
  *
  * @author nacho
@@ -16,6 +18,18 @@ public class AplicacionDePrueba {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+    }
+
+    private static boolean checkUsuario(java.lang.String nick, java.lang.String password) {
+        servicio.NewWebService_Service service = new servicio.NewWebService_Service();
+        servicio.NewWebService port = service.getNewWebServicePort();
+        return port.checkUsuario(nick, password);
+    }
+
+    private static Usuarios getUsuario(java.lang.String nick) {
+        servicio.NewWebService_Service service = new servicio.NewWebService_Service();
+        servicio.NewWebService port = service.getNewWebServicePort();
+        return port.getUsuario(nick);
     }
     
 }

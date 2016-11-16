@@ -1,8 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicio/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicio/">
 
+<xs:element name="checkUsuario" type="tns:checkUsuario"/>
+
+<xs:element name="checkUsuarioResponse" type="tns:checkUsuarioResponse"/>
+
 <xs:element name="conexion1" type="tns:conexion1"/>
 
 <xs:element name="conexion1Response" type="tns:conexion1Response"/>
+
+<xs:element name="getUsuario" type="tns:getUsuario"/>
+
+<xs:element name="getUsuarioResponse" type="tns:getUsuarioResponse"/>
 
 <xs:element name="hello" type="tns:hello"/>
 
@@ -11,6 +19,8 @@
 <xs:element name="prueba2" type="tns:prueba2"/>
 
 <xs:element name="prueba2Response" type="tns:prueba2Response"/>
+
+<xs:element name="usuarios" type="tns:usuarios"/>
 
 <xs:complexType name="hello">
 <xs:sequence>
@@ -21,6 +31,42 @@
 <xs:complexType name="helloResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsuario">
+<xs:sequence>
+<xs:element name="nick" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuarios" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuarios">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="nick" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkUsuario">
+<xs:sequence>
+<xs:element name="nick" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 

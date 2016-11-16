@@ -10,11 +10,11 @@
 <message name="helloResponse">
 <part name="parameters" element="tns:helloResponse"/>
 </message>
-<message name="conexion1">
-<part name="parameters" element="tns:conexion1"/>
+<message name="getUsuario">
+<part name="parameters" element="tns:getUsuario"/>
 </message>
-<message name="conexion1Response">
-<part name="parameters" element="tns:conexion1Response"/>
+<message name="getUsuarioResponse">
+<part name="parameters" element="tns:getUsuarioResponse"/>
 </message>
 <message name="prueba2">
 <part name="parameters" element="tns:prueba2"/>
@@ -22,18 +22,38 @@
 <message name="prueba2Response">
 <part name="parameters" element="tns:prueba2Response"/>
 </message>
+<message name="checkUsuario">
+<part name="parameters" element="tns:checkUsuario"/>
+</message>
+<message name="checkUsuarioResponse">
+<part name="parameters" element="tns:checkUsuarioResponse"/>
+</message>
+<message name="conexion1">
+<part name="parameters" element="tns:conexion1"/>
+</message>
+<message name="conexion1Response">
+<part name="parameters" element="tns:conexion1Response"/>
+</message>
 <portType name="NewWebService">
 <operation name="hello">
 <input wsam:Action="http://servicio/NewWebService/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://servicio/NewWebService/helloResponse" message="tns:helloResponse"/>
 </operation>
-<operation name="conexion1">
-<input wsam:Action="http://servicio/NewWebService/conexion1Request" message="tns:conexion1"/>
-<output wsam:Action="http://servicio/NewWebService/conexion1Response" message="tns:conexion1Response"/>
+<operation name="getUsuario">
+<input wsam:Action="http://servicio/NewWebService/getUsuarioRequest" message="tns:getUsuario"/>
+<output wsam:Action="http://servicio/NewWebService/getUsuarioResponse" message="tns:getUsuarioResponse"/>
 </operation>
 <operation name="prueba2">
 <input wsam:Action="http://servicio/NewWebService/prueba2Request" message="tns:prueba2"/>
 <output wsam:Action="http://servicio/NewWebService/prueba2Response" message="tns:prueba2Response"/>
+</operation>
+<operation name="checkUsuario">
+<input wsam:Action="http://servicio/NewWebService/checkUsuarioRequest" message="tns:checkUsuario"/>
+<output wsam:Action="http://servicio/NewWebService/checkUsuarioResponse" message="tns:checkUsuarioResponse"/>
+</operation>
+<operation name="conexion1">
+<input wsam:Action="http://servicio/NewWebService/conexion1Request" message="tns:conexion1"/>
+<output wsam:Action="http://servicio/NewWebService/conexion1Response" message="tns:conexion1Response"/>
 </operation>
 </portType>
 <binding name="NewWebServicePortBinding" type="tns:NewWebService">
@@ -47,7 +67,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="conexion1">
+<operation name="getUsuario">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -57,6 +77,24 @@
 </output>
 </operation>
 <operation name="prueba2">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="checkUsuario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="conexion1">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
